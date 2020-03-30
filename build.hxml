@@ -1,0 +1,8 @@
+-js bin/js/app.js
+-cp src
+-main Main
+-lib react
+-lib react-next
+-D react_global
+-debug
+-dce full
