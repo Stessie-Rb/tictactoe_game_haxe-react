@@ -15,7 +15,7 @@ class Square extends ReactComponentOfProps<SquareProps> {
 
     override public function render():ReactElement {
         return jsx(
-            <div onClick={props.onClick} className="square">
+            <div onClick={props.onClick} className="col s4 square">
                 <span>
                     {props.value}
                 </span>

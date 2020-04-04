@@ -79,11 +79,16 @@ class TicTacToe extends ReactComponentOfState<TicTacToeState> {
                         <h4>oxo Tic Tac Toe Game oxo</h4>
                     </div>
                 </div>
-               <div className="board card">
-                    <for{i in 0...9}>
-                        <Square value={current.squares[i]} onClick={this.handleSquareClick.bind(i)} key={i} />
-                    </for>
-               </div>
+                <div className="row">
+                    <div className="col s3">
+                        <div className="row">
+                            <for{i in 0...9}>
+                                <Square value={current.squares[i]} onClick={this.handleSquareClick.bind(i)} key={i} />
+                            </for>
+                        </div>
+                    </div>
+                </div>
+              
             </div>
         );
     }

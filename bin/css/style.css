@@ -11,10 +11,9 @@ h4{
     flex-wrap: wrap;
 }
 .square{
-    width: 80px;
     height: 80px;
     text-align: center;
-    border: 0.1px solid lightslategray;
+    border: 0.1px dotted lightslategray;
     line-height: 80px;
     font-size: 1.5rem;
 }

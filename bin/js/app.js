@@ -44,7 +44,7 @@ var view_Square = function(props) {
 view_Square.__super__ = React.Component;
 view_Square.prototype = $extend(React.Component.prototype,{
 	render: function() {
-		return React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("div"),{ onClick : this.props.onClick, className : "square"},React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("span"),{ },this.props.value));
+		return React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("div"),{ onClick : this.props.onClick, className : "col s4 square"},React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("span"),{ },this.props.value));
 	}
 });
 var view_TicTacToe = function(props) {
@@ -104,53 +104,55 @@ view_TicTacToe.prototype = $extend(React.Component.prototype,{
 		var tmp2 = react__$ReactType_ReactType_$Impl_$.fromString("div");
 		var tmp3 = React.createElement(tmp1,{ className : "row"},React.createElement(tmp2,{ className : "col s12", id : "header"},React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("h4"),{ },"oxo Tic Tac Toe Game oxo")));
 		var tmp4 = react__$ReactType_ReactType_$Impl_$.fromString("div");
+		var tmp5 = react__$ReactType_ReactType_$Impl_$.fromString("div");
+		var tmp6 = react__$ReactType_ReactType_$Impl_$.fromString("div");
 		var _g = [];
 		var f = $bind(this,this.handleSquareClick);
-		var tmp5 = function() {
+		var tmp7 = function() {
 			f(0);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 0, value : current.squares[0], onClick : tmp5}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 0, value : current.squares[0], onClick : tmp7}));
 		var f1 = $bind(this,this.handleSquareClick);
-		var tmp6 = function() {
+		var tmp8 = function() {
 			f1(1);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 1, value : current.squares[1], onClick : tmp6}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 1, value : current.squares[1], onClick : tmp8}));
 		var f2 = $bind(this,this.handleSquareClick);
-		var tmp7 = function() {
+		var tmp9 = function() {
 			f2(2);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 2, value : current.squares[2], onClick : tmp7}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 2, value : current.squares[2], onClick : tmp9}));
 		var f3 = $bind(this,this.handleSquareClick);
-		var tmp8 = function() {
+		var tmp10 = function() {
 			f3(3);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 3, value : current.squares[3], onClick : tmp8}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 3, value : current.squares[3], onClick : tmp10}));
 		var f4 = $bind(this,this.handleSquareClick);
-		var tmp9 = function() {
+		var tmp11 = function() {
 			f4(4);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 4, value : current.squares[4], onClick : tmp9}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 4, value : current.squares[4], onClick : tmp11}));
 		var f5 = $bind(this,this.handleSquareClick);
-		var tmp10 = function() {
+		var tmp12 = function() {
 			f5(5);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 5, value : current.squares[5], onClick : tmp10}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 5, value : current.squares[5], onClick : tmp12}));
 		var f6 = $bind(this,this.handleSquareClick);
-		var tmp11 = function() {
+		var tmp13 = function() {
 			f6(6);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 6, value : current.squares[6], onClick : tmp11}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 6, value : current.squares[6], onClick : tmp13}));
 		var f7 = $bind(this,this.handleSquareClick);
-		var tmp12 = function() {
+		var tmp14 = function() {
 			f7(7);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 7, value : current.squares[7], onClick : tmp12}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 7, value : current.squares[7], onClick : tmp14}));
 		var f8 = $bind(this,this.handleSquareClick);
-		var tmp13 = function() {
+		var tmp15 = function() {
 			f8(8);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 8, value : current.squares[8], onClick : tmp13}));
-		return React.createElement(tmp,{ className : "container"},tmp3,React.createElement(tmp4,{ className : "board card"},_g));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 8, value : current.squares[8], onClick : tmp15}));
+		return React.createElement(tmp,{ className : "container"},tmp3,React.createElement(tmp4,{ className : "row"},React.createElement(tmp5,{ className : "col s3"},React.createElement(tmp6,{ className : "row"},_g))));
 	}
 });
 var $_;
