@@ -45,10 +45,9 @@ view_EndOfGame.__super__ = React.Component;
 view_EndOfGame.prototype = $extend(React.Component.prototype,{
 	render: function() {
 		var tmp = react__$ReactType_ReactType_$Impl_$.fromString("div");
-		var tmp1 = React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("h1"),{ },"🏆");
-		var tmp2 = React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("h3"),{ },this.props.winner," won the game !");
-		var tmp3 = react__$ReactType_ReactType_$Impl_$.fromString("a");
-		return React.createElement(tmp,{ },tmp1,tmp2,React.createElement(tmp3,{ className : "waves-effect waves-light btn", onClick : this.props.onClick},React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("i"),{ className : "material-icons right"},"play_arrow"),"Play again"));
+		var tmp1 = this.props.winner != null ? React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(React.Fragment),null,React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("h1"),{ },"🏆"),React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("h3"),{ },this.props.winner," won the game !")) : this.props.winner == null ? React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(React.Fragment),null,React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("h1"),{ },"😯"),React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("h3"),{ },"Neither x nor o won this time")) : null;
+		var tmp2 = react__$ReactType_ReactType_$Impl_$.fromString("a");
+		return React.createElement(tmp,{ },tmp1,React.createElement(tmp2,{ className : "waves-effect waves-light btn", onClick : this.props.onClick},React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("i"),{ className : "material-icons right"},"play_arrow"),"Play again"));
 	}
 });
 var view_HistoryAction = function(props) {
@@ -180,7 +179,7 @@ view_TicTacToe.prototype = $extend(React.Component.prototype,{
 		var tmp17 = React.createElement(tmp6,{ className : "col s3"},React.createElement(tmp7,{ className : "row"},_g));
 		var tmp18 = react__$ReactType_ReactType_$Impl_$.fromString("div");
 		var tmp19;
-		if(this.state.stepNumber != 9 && winner == null) {
+		if(this.state.stepNumber < 9 && winner == null) {
 			var tmp20 = react__$ReactType_ReactType_$Impl_$.fromString("ol");
 			var _g1 = [];
 			var _g2 = 0;
@@ -195,14 +194,13 @@ view_TicTacToe.prototype = $extend(React.Component.prototype,{
 			}
 			tmp19 = React.createElement(tmp20,{ },_g1);
 		} else {
-			tmp19 = null;
+			tmp19 = winner != null || this.state.stepNumber == 9 && winner == null ? React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_EndOfGame),{ winner : winner, onClick : function() {
+				var tmp21 = _gthis.initialState();
+				_gthis.setState(tmp21);
+				return;
+			}}) : null;
 		}
-		var tmp21 = winner != null ? React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_EndOfGame),{ winner : winner, onClick : function() {
-			var tmp22 = _gthis.initialState();
-			_gthis.setState(tmp22);
-			return;
-		}}) : null;
-		return React.createElement(tmp,{ className : "container"},tmp3,tmp4,React.createElement(tmp5,{ className : "row"},tmp17,React.createElement(tmp18,{ className : "col s9"},tmp19,tmp21)));
+		return React.createElement(tmp,{ className : "container"},tmp3,tmp4,React.createElement(tmp5,{ className : "row"},tmp17,React.createElement(tmp18,{ className : "col s9"},tmp19)));
 	}
 });
 var $_;

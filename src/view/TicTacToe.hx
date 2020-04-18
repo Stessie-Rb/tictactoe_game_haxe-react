@@ -92,16 +92,15 @@ class TicTacToe extends ReactComponentOfState<TicTacToeState> {
                         </div>
                     </div>
                     <div className="col s9">
-                    <if{state.stepNumber != 9 && winner == null}>
+                    <if {state.stepNumber < 9 && winner == null}>
                         <ol>
                             <for {i in 0...state.previousActions.length}>
                                 <HistoryAction key={i} index={i} onClick={this.jumpTo.bind(i)} />
                             </for>
                         </ol>
-                    </if>   
-                    <if{winner != null}>
+                    <else if {winner != null || (state.stepNumber == 9 && winner == null) }>
                         <EndOfGame winner={winner} onClick={()->setState(initialState())}/>
-                    </if>
+                    </if>  
                     </div>
                 </div>
             </div>
