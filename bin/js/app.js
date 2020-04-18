@@ -38,6 +38,29 @@ react__$ReactType_ReactType_$Impl_$.isNull = function() {
 	window.console.error("Runtime value for ReactType is null." + " Something may be wrong with your externs.");
 	return "div";
 };
+var view_EndOfGame = function(props) {
+	React.Component.call(this,props);
+};
+view_EndOfGame.__super__ = React.Component;
+view_EndOfGame.prototype = $extend(React.Component.prototype,{
+	render: function() {
+		var tmp = react__$ReactType_ReactType_$Impl_$.fromString("div");
+		var tmp1 = React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("h1"),{ },"🏆");
+		var tmp2 = React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("h3"),{ },this.props.winner," won the game !");
+		var tmp3 = react__$ReactType_ReactType_$Impl_$.fromString("a");
+		return React.createElement(tmp,{ },tmp1,tmp2,React.createElement(tmp3,{ className : "waves-effect waves-light btn", onClick : this.props.onClick},React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("i"),{ className : "material-icons right"},"play_arrow"),"Play again"));
+	}
+});
+var view_HistoryAction = function(props) {
+	React.Component.call(this,props);
+};
+view_HistoryAction.__super__ = React.Component;
+view_HistoryAction.prototype = $extend(React.Component.prototype,{
+	render: function() {
+		var description = this.props.index == 0 ? "Game starts" : "Move #" + this.props.index;
+		return React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("li"),{ key : this.props.index},React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("a"),{ href : "#", onClick : this.props.onClick},description));
+	}
+});
 var view_Square = function(props) {
 	React.Component.call(this,props);
 };
@@ -95,6 +118,7 @@ view_TicTacToe.prototype = $extend(React.Component.prototype,{
 		this.setState({ xIsNextPlayer : step % 2 != 0 ? false : true, stepNumber : step, previousActions : this.state.previousActions});
 	}
 	,render: function() {
+		var _gthis = this;
 		var previousActions = this.state.previousActions;
 		var current = previousActions[this.state.stepNumber];
 		var winner = this.defineWinner(current.squares);
@@ -103,61 +127,89 @@ view_TicTacToe.prototype = $extend(React.Component.prototype,{
 		var tmp1 = react__$ReactType_ReactType_$Impl_$.fromString("div");
 		var tmp2 = react__$ReactType_ReactType_$Impl_$.fromString("div");
 		var tmp3 = React.createElement(tmp1,{ className : "row"},React.createElement(tmp2,{ className : "col s12", id : "header"},React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("h4"),{ },"oxo Tic Tac Toe Game oxo")));
-		var tmp4 = react__$ReactType_ReactType_$Impl_$.fromString("div");
+		var tmp4 = React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("div"),{ className : "row"},React.createElement(react__$ReactType_ReactType_$Impl_$.fromString("h6"),{ },status));
 		var tmp5 = react__$ReactType_ReactType_$Impl_$.fromString("div");
 		var tmp6 = react__$ReactType_ReactType_$Impl_$.fromString("div");
+		var tmp7 = react__$ReactType_ReactType_$Impl_$.fromString("div");
 		var _g = [];
 		var f = $bind(this,this.handleSquareClick);
-		var tmp7 = function() {
+		var tmp8 = function() {
 			f(0);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 0, value : current.squares[0], onClick : tmp7}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 0, value : current.squares[0], onClick : tmp8}));
 		var f1 = $bind(this,this.handleSquareClick);
-		var tmp8 = function() {
+		var tmp9 = function() {
 			f1(1);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 1, value : current.squares[1], onClick : tmp8}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 1, value : current.squares[1], onClick : tmp9}));
 		var f2 = $bind(this,this.handleSquareClick);
-		var tmp9 = function() {
+		var tmp10 = function() {
 			f2(2);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 2, value : current.squares[2], onClick : tmp9}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 2, value : current.squares[2], onClick : tmp10}));
 		var f3 = $bind(this,this.handleSquareClick);
-		var tmp10 = function() {
+		var tmp11 = function() {
 			f3(3);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 3, value : current.squares[3], onClick : tmp10}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 3, value : current.squares[3], onClick : tmp11}));
 		var f4 = $bind(this,this.handleSquareClick);
-		var tmp11 = function() {
+		var tmp12 = function() {
 			f4(4);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 4, value : current.squares[4], onClick : tmp11}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 4, value : current.squares[4], onClick : tmp12}));
 		var f5 = $bind(this,this.handleSquareClick);
-		var tmp12 = function() {
+		var tmp13 = function() {
 			f5(5);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 5, value : current.squares[5], onClick : tmp12}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 5, value : current.squares[5], onClick : tmp13}));
 		var f6 = $bind(this,this.handleSquareClick);
-		var tmp13 = function() {
+		var tmp14 = function() {
 			f6(6);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 6, value : current.squares[6], onClick : tmp13}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 6, value : current.squares[6], onClick : tmp14}));
 		var f7 = $bind(this,this.handleSquareClick);
-		var tmp14 = function() {
+		var tmp15 = function() {
 			f7(7);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 7, value : current.squares[7], onClick : tmp14}));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 7, value : current.squares[7], onClick : tmp15}));
 		var f8 = $bind(this,this.handleSquareClick);
-		var tmp15 = function() {
+		var tmp16 = function() {
 			f8(8);
 		};
-		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 8, value : current.squares[8], onClick : tmp15}));
-		return React.createElement(tmp,{ className : "container"},tmp3,React.createElement(tmp4,{ className : "row"},React.createElement(tmp5,{ className : "col s3"},React.createElement(tmp6,{ className : "row"},_g))));
+		_g.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_Square),{ key : 8, value : current.squares[8], onClick : tmp16}));
+		var tmp17 = React.createElement(tmp6,{ className : "col s3"},React.createElement(tmp7,{ className : "row"},_g));
+		var tmp18 = react__$ReactType_ReactType_$Impl_$.fromString("div");
+		var tmp19;
+		if(this.state.stepNumber != 9 && winner == null) {
+			var tmp20 = react__$ReactType_ReactType_$Impl_$.fromString("ol");
+			var _g1 = [];
+			var _g2 = 0;
+			var _g3 = this.state.previousActions.length;
+			while(_g2 < _g3) {
+				var i = _g2++;
+				_g1.push(React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_HistoryAction),{ key : i, index : i, onClick : (function(step,f9) {
+					return function() {
+						f9[0](step[0]);
+					};
+				})([i],[$bind(this,this.jumpTo)])}));
+			}
+			tmp19 = React.createElement(tmp20,{ },_g1);
+		} else {
+			tmp19 = null;
+		}
+		var tmp21 = winner != null ? React.createElement(react__$ReactType_ReactType_$Impl_$.fromComp(view_EndOfGame),{ winner : winner, onClick : function() {
+			var tmp22 = _gthis.initialState();
+			_gthis.setState(tmp22);
+			return;
+		}}) : null;
+		return React.createElement(tmp,{ className : "container"},tmp3,tmp4,React.createElement(tmp5,{ className : "row"},tmp17,React.createElement(tmp18,{ className : "col s9"},tmp19,tmp21)));
 	}
 });
 var $_;
 function $bind(o,m) { if( m == null ) return null; if( m.__id__ == null ) m.__id__ = $global.$haxeUID++; var f; if( o.hx__closures__ == null ) o.hx__closures__ = {}; else f = o.hx__closures__[m.__id__]; if( f == null ) { f = m.bind(o); o.hx__closures__[m.__id__] = f; } return f; }
 $global.$haxeUID |= 0;
+view_EndOfGame.displayName = "EndOfGame";
+view_HistoryAction.displayName = "HistoryAction";
 view_Square.displayName = "Square";
 view_TicTacToe.displayName = "TicTacToe";
 Main.main();

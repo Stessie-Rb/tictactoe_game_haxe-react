@@ -72,12 +72,16 @@ class TicTacToe extends ReactComponentOfState<TicTacToeState> {
         var current = previousActions[state.stepNumber];
         var winner = defineWinner(current.squares);
         var status = winner != null ? 'Winner: $winner' : ('Next player: ' + (state.xIsNextPlayer ? 'X' : 'O'));
+
         return jsx(
             <div className="container">
                 <div className="row">
                     <div className="col s12" id="header">
                         <h4>oxo Tic Tac Toe Game oxo</h4>
                     </div>
+                </div>
+                <div className="row">
+                    <h6>{status}</h6>
                 </div>
                 <div className="row">
                     <div className="col s3">
@@ -87,8 +91,19 @@ class TicTacToe extends ReactComponentOfState<TicTacToeState> {
                             </for>
                         </div>
                     </div>
+                    <div className="col s9">
+                    <if{state.stepNumber != 9 && winner == null}>
+                        <ol>
+                            <for {i in 0...state.previousActions.length}>
+                                <HistoryAction key={i} index={i} onClick={this.jumpTo.bind(i)} />
+                            </for>
+                        </ol>
+                    </if>   
+                    <if{winner != null}>
+                        <EndOfGame winner={winner} onClick={()->setState(initialState())}/>
+                    </if>
+                    </div>
                 </div>
-              
             </div>
         );
     }
